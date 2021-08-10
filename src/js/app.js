@@ -1,6 +1,21 @@
-// TODO: write your code here
-import sum from './basic';
+const getSpecials = (obj) => {
+  const resultArr = [];
+  const specialsArr = obj.special;
+  specialsArr.forEach((element) => {
+    const specialToPush = {};
+    const {
+      id,
+      name,
+      icon,
+      description = 'Описание недоступно',
+    } = element;
+    specialToPush.id = id;
+    specialToPush.name = name;
+    specialToPush.icon = icon;
+    specialToPush.description = description;
+    resultArr.push(specialToPush);
+  });
+  return resultArr;
+};
 
-console.log('worked');
-
-console.log(sum([1, 2]));
+export default getSpecials;
